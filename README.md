@@ -25,11 +25,11 @@ Para a criação dessa estrutura são necessárias alguma permissões de acesso 
 ## Criando uma exportação do Stackdrive para o Pub/Sub
 
 1. Vá para a seção Logging no menu lateral
-1. Navegue até "Exports" no painel esquerdo. Clique em "CREATE EXPORT"
-1. Nomeie a exportação como "ga_sessions_creation" por exemplo, mas você pode nomear como quiser
-1. Em "Sink Service" escolha "Cloud Pub/Sub" e, abaixo, escolha a opção "Create new Cloud Pub/Sub topic"
-1. Insira o nome do tópico - por exemplo "ga_sessions_creation"
-1. Para adicionar o filtro de consulta, clique na seta para baixo e selecione "Convert to advanced filter"
+1. Navegue até _"Exports"_ no painel esquerdo. Clique em _"CREATE EXPORT"_
+1. Nomeie a exportação como _"ga_sessions_creation"_ por exemplo, mas você pode nomear como quiser
+1. Em "Sink Service" escolha _"Cloud Pub/Sub"_ e, abaixo, escolha a opção _"Create new Cloud Pub/Sub topic"_
+1. Insira o nome do tópico - por exemplo _"ga_sessions_creation"_
+1. Para adicionar o filtro de consulta, clique na seta para baixo e selecione _"Convert to advanced filter"_
 1. Remova o texto na caixa de texto resultante e substitua-o por:
 
 ```bash
@@ -43,7 +43,10 @@ NOT
 protoPayload.serviceData.jobCompletedEvent.job.jobConfiguration.load.destinationTable.tableId:"ga_sessions_intraday"
 ```
 
-Agora toda vez que uma nova tabela do ga_sessions_* for criada, um requisição do Pub/Sub será disparada.
+Após essa configuração toda vez que uma nova tabela do _"ga_sessions\_"_ for criada, um requisição do Pub/Sub será disparada, servindo de gatilho para uma Google Cloud Function(GCF) ,podendo ser utilizada para diversas finalidades como por exemplo:
+
+* [Exportar dados para o GCS]();
+* [Schendular uma query no BQ]();
 
 ## Licença
 
