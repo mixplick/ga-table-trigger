@@ -1,4 +1,4 @@
-<img src="https://www.dp6.com.br/wp-content/uploads/2017/12/logo-cor.png" alt="DP6 logo" title="DP6" align="right" height="50" width="160"/>
+
 
 # [Bigquery GA Sessions: Table Created Trigger](https://github.com/mixplick/ga-table-trigger)
 
